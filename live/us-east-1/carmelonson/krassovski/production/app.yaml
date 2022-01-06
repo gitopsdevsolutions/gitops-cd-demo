@@ -1,0 +1,34 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: us-east-1-carmelonson-krassovski-production
+  namespace: argocd
+  annotations:
+    godsAppName: krassovski
+    godsCluster: us-east-1
+    godsTeamName: carmelonson
+    godsEnv: production
+    godsEnvConfigurationVersion: 645ab5915f5fec9985eb30ded6e6d8ae19dba108
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions/gitops-cd-demo'
+    path: 'charts/base-app'
+    targetRevision: main
+    helm:
+      values: |
+        secrets:
+          GODS_AWS_ACCESS_KEY: "<path:gitopsdevsolutions#aws_access_key_id>"
+          GODS_AWS_SECRET_ACCESS_KEY: "<path:gitopsdevsolutions#aws_secret_key>"
+        env:
+          GODS_AWS_REGION: "us-east-1"
+          IMA_SHEL_DANNY_LOCATION: ALAI
+          IMA_SHEL_DANNY_ROLE: BABY_GIRL
+        
+        null
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: carmelonson-production
