@@ -28,7 +28,9 @@ spec:
           IMA_SHEL_DANNY_LOCATION: ALAI
           IMA_SHEL_DANNY_ROLE: BABY_GIRL
         
-        null
+        image: gitopsdevsolutions/krassovski
+        tag: latest
+        createdAt: 2022-01-02 20:25:56 +0000 UTC
   destination:
     server: https://kubernetes.default.svc
     namespace: carmelonson-production
