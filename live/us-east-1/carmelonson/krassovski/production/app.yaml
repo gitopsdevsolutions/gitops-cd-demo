@@ -8,7 +8,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: carmelonson
     godsEnv: production
-    godsEnvConfigurationVersion: 645ab5915f5fec9985eb30ded6e6d8ae19dba108
+    godsEnvConfigurationVersion: bacbf5f762d484498e547c04e524a441fa010b7f
 spec:
   syncPolicy: 
     syncOptions:
