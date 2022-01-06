@@ -15,7 +15,7 @@ spec:
     - CreateNamespace=true
   project: default
   source:
-    repoURL: 'https://github.comg/gitopsdevsolutions/opinionated-charts'
+    repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
     path: 'charts/base-app'
     targetRevision: main
     helm:
