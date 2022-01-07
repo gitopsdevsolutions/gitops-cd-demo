@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: us-east-1-danilicious-chimmi-production
+  namespace: argocd
+  annotations:
+    godsAppName: chimmi
+    godsCluster: us-east-1
+    godsTeamName: danilicious
+    godsEnv: production
+    godsEnvConfigurationVersion: 20542b03ce464bb3f30e7244350c0f9e1b62484a
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
+    path: 'charts/base-app'
+    targetRevision: main
+    helm:
+      values: |
+        env:
+          DESCRIPTION: "CHIMMI CHIMMI YEA CHIMMI YEA CHIMMI YEA"
+        null
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: danilicious-production
