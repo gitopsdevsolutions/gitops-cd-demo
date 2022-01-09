@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: netta-production-namespace
+  namespace: argocd
+  annotations:
+    
+    godsCluster: us-east-1
+    godsTeamName: netta
+    
+    
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions/gitops-cd-demo'
+    path: 'live/us-east-1/netta'
+    targetRevision: main
+    plugin:
+      name: argocd-vault-plugin
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: netta-production
