@@ -8,7 +8,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: netta
     godsEnv: production
-    godsEnvConfigurationVersion: 23f519706f8d886e7a01c7ada325bf202cbf5743
+    godsEnvConfigurationVersion: 407828b7765fc358395620deeb35b09bee5ddfb7
 spec:
   syncPolicy: 
     syncOptions:
