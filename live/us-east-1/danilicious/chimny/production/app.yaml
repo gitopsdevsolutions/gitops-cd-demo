@@ -23,9 +23,9 @@ spec:
         env:
           DESCRIPTION: "CHIMNY CHIMNY YEA CHIMNY YEA CHIMNY YEA, SWALALA"
         
-        image: hello-world
+        image: gitopsdevsolutions/lifecycle-ui
         tag: latest
-        createdAt: 2021-09-23 23:47:57 +0000 UTC
+        createdAt: 2022-01-03 01:25:35 +0000 UTC
   destination:
     server: https://kubernetes.default.svc
     namespace: danilicious-production
