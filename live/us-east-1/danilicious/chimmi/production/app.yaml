@@ -8,7 +8,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: danilicious
     godsEnv: production
-    godsEnvConfigurationVersion: 052f4a34c9b4e8a4330d056da48f5e1e9ce5054b
+    godsEnvConfigurationVersion: 0f25912c796f2aa572a7edc6be121a2aab47e010
 spec:
   syncPolicy: 
     syncOptions:
