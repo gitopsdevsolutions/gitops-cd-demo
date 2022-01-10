@@ -8,7 +8,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: carmelonson
     godsEnv: production
-    godsEnvConfigurationVersion: bacbf5f762d484498e547c04e524a441fa010b7f
+    godsEnvConfigurationVersion: 132869a0ddf396bc2fa2d1f499f9d1d5936dd635
 spec:
   syncPolicy: 
     syncOptions:
@@ -16,7 +16,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
-    path: 'charts/base-app'
+    path: 'charts/base-cron-job'
     targetRevision: main
     helm:
       values: |
@@ -27,10 +27,10 @@ spec:
           GODS_AWS_REGION: "us-east-1"
           IMA_SHEL_DANNY_LOCATION: ALAI
           IMA_SHEL_DANNY_ROLE: BABY_GIRL
-        
+        interval: "*/1 * * * *"
         image: gitopsdevsolutions/krassovski
         tag: latest
-        createdAt: 2022-01-02 20:25:56 +0000 UTC
+        createdAt: 2022-01-10 11:36:11 +0000 UTC
   destination:
     server: https://kubernetes.default.svc
     namespace: carmelonson-production
