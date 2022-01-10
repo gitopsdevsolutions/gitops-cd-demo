@@ -8,7 +8,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: danilicious
     godsEnv: production
-    godsEnvConfigurationVersion: af1e9152c88547e86c28be3a6fd122346442036a
+    godsEnvConfigurationVersion: 00dc622d54ff519fe917a72495f68d2310eecf8e
 spec:
   syncPolicy: 
     syncOptions:
@@ -21,7 +21,7 @@ spec:
     helm:
       values: |
         env:
-          DESCRIPTION: "CHIMNY CHIMNY YEA CHIMNY YEA CHIMNY YEA, SWALALA, SWA"
+          DESCRIPTION: "CHIMNY CHIMNY YEA CHIMNY YEA CHIMNY YEA, SWALALA"
         
         image: hello-world
         tag: latest
