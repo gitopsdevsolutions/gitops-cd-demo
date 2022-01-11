@@ -8,7 +8,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: netta
     godsEnv: production
-    godsEnvConfigurationVersion: 407828b7765fc358395620deeb35b09bee5ddfb7
+    godsEnvConfigurationVersion: 68cda9dc5b61b17217abc5c6f0fe91e20ede8a83
 spec:
   syncPolicy: 
     syncOptions:
@@ -22,7 +22,7 @@ spec:
       values: |
         env:
           ALPHA: 16.7
-          DICKSIZE: 800
+          DICKSIZE: 80
         image: gitopsdevsolutions/lifecycle-ui
         tag: latest
         createdAt: 2022-01-03 01:25:35 +0000 UTC
