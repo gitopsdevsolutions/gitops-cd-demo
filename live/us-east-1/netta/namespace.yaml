@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: netta-production-namespace
+  name: netta-staging-namespace
   namespace: argocd
   annotations:
     
@@ -22,4 +22,4 @@ spec:
       name: argocd-vault-plugin
   destination:
     server: https://kubernetes.default.svc
-    namespace: netta-production
+    namespace: netta-staging
