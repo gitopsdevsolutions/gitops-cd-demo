@@ -8,7 +8,7 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: danilicious
     godsEnv: production
-    godsEnvConfigurationVersion: 0f25912c796f2aa572a7edc6be121a2aab47e010
+    godsEnvConfigurationVersion: 12d4c84505266b21bd2845c1f86cc161e94d542d
 spec:
   syncPolicy: 
     syncOptions:
@@ -21,7 +21,7 @@ spec:
     helm:
       values: |
         env:
-          DESCRIPTION: "CHIMMI CHIMMI YEA CHIMMI YEA CHIMMI YEA, SWALALA, SWA"
+          DESCRIPTION: "CHIMMI CHIMMI YEA CHIMMI YEA CHIMMI YEA, SWALALA, SWALALA"
         
         image: hello-world
         tag: latest
