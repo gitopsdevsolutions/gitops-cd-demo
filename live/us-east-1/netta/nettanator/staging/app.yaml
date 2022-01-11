@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: us-east-1-netta-nettanator-staging
+  namespace: argocd
+  annotations:
+    godsAppName: nettanator
+    godsCluster: us-east-1
+    godsTeamName: netta
+    godsEnv: staging
+    godsEnvConfigurationVersion: 68cda9dc5b61b17217abc5c6f0fe91e20ede8a83
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
+    path: 'charts/base-app'
+    targetRevision: main
+    helm:
+      values: |
+        env:
+          ALPHA: -13.0
+          DICKSIZE: 400
+        route:
+          host: netta.kube.localhost
+          path: /
+          http:
+            port: 80
+        
+        image: gitopsdevsolutions/lifecycle-ui
+        tag: latest
+        createdAt: 2022-01-03 01:25:35 +0000 UTC
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: netta-staging
