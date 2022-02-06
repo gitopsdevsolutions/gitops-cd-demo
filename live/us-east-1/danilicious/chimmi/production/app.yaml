@@ -5,10 +5,11 @@ metadata:
   namespace: argocd
   annotations:
     godsAppName: chimmi
+    godsApplicationType: Cron
     godsCluster: us-east-1
     godsTeamName: danilicious
     godsEnv: production
-    godsEnvConfigurationVersion: 52d061216a2eefe55bf585cefeb8dfb84fcfeb0f
+    godsEnvConfigurationVersion: 8bc926060ab27c2da6edeb1cb90263882882edcd
 spec:
   syncPolicy: 
     syncOptions:
@@ -21,7 +22,7 @@ spec:
     helm:
       values: |
         env:
-          DESCRIPTION: "CHIMMI CHIMMI YEA CHIMMI YEA CHIMMI YEA, SWALALA, SWALALA"
+          DESCRIPTION: "CHIMMI CHIMMI YEA CHIMMI YEA CHIMMI YEA, SWALALALA"
         interval: "*/1 * * * *"
         image: hello-world
         tag: latest
