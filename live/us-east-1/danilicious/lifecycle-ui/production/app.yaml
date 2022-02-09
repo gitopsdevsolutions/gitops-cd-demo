@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: us-east-1-danilicious-lifecycle-ui-production
+  namespace: argocd
+  annotations:
+    godsAppName: lifecycle-ui
+    
+    godsCluster: us-east-1
+    godsTeamName: danilicious
+    godsEnv: production
+    godsEnvConfigurationVersion: 4c06b7919e9b40d3b19178a6225c0cfb8881e835
+spec:
+  syncPolicy: 
+    syncOptions:
+    - CreateNamespace=true
+  project: default
+  source:
+    repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
+    path: 'charts/base-app'
+    targetRevision: main
+    
+    helm:
+      values: |
+        route:
+          host: ran-gever.kube.localhost
+          path: /
+          http:
+            port: 80
+        image: gitopsdevsolutions/lifecycle-ui
+        tag: latest
+        createdAt: 2022-01-13 00:15:51 +0000 UTC
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: danilicious-production
