@@ -5,10 +5,12 @@ metadata:
   namespace: argocd
   annotations:
     godsAppName: jobisgood
+    godsApplicationType: Job
     godsCluster: us-east-1
     godsTeamName: danilicious
     godsEnv: production
-    godsEnvConfigurationVersion: 68cda9dc5b61b17217abc5c6f0fe91e20ede8a83
+    godsEnvConfigurationVersion: f0f1398b98876e5923bfb40c3109077493441e51
+    godsImageTag: latest
 spec:
   syncPolicy: 
     syncOptions:
@@ -18,6 +20,7 @@ spec:
     repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
     path: 'charts/base-job'
     targetRevision: main
+    
     helm:
       values: |
         env:
