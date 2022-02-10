@@ -9,7 +9,8 @@ metadata:
     godsCluster: us-east-1
     godsTeamName: danilicious
     godsEnv: production
-    godsEnvConfigurationVersion: 8bc926060ab27c2da6edeb1cb90263882882edcd
+    godsEnvConfigurationVersion: c2c21a66fd2e93a2555d7306bba6d94bbcaec141
+    godsImageTag: latest
 spec:
   syncPolicy: 
     syncOptions:
@@ -17,8 +18,9 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
-    path: 'charts/base-cron-job'
+    path: 'charts/base-job'
     targetRevision: main
+    
     helm:
       values: |
         env:
