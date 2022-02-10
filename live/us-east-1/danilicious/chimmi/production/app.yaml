@@ -18,7 +18,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/gitopsdevsolutions/opinionated-charts'
-    path: 'charts/base-job'
+    path: 'charts/base-cron-job'
     targetRevision: main
     
     helm:
