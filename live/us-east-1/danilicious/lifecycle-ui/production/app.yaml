@@ -10,6 +10,7 @@ metadata:
     godsTeamName: danilicious
     godsEnv: production
     godsEnvConfigurationVersion: 4c06b7919e9b40d3b19178a6225c0cfb8881e835
+    godsImageTag: latest
 spec:
   syncPolicy: 
     syncOptions:
